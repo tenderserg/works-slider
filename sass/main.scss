@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,600');
+@import "normalize";
+@import "variables";
+@import "mixin";
+// @import "grid";
+
+
+*, *:after, *:before{
+	@include box-sizing;
+	margin: 0;
+}
+
+body{
+	font-family: $main-font;
+	color: $font-color;
+	background-color: $color-bg;
+	font-weight: $font-weight;
+	line-height: 1;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.container {
+  max-width: $container-width;
+  width: 100%;
+  padding: 0 $col-padding;
+  margin: 0 auto;
+}
+
+// .full-container {
+//   width: 100%;
+//   padding: 0 $col-padding;
+// }
+
+.container {
+	h4{
+		padding-top: 65px;
+		margin-bottom: 25px;
+		color:  #303030;
+    font-size: 18px;
+    font-weight: 600;
+	}
+}
+
+.title{
+	margin-bottom: 100px;
+	font-size: 86px;
+  line-height: 90px;
+}
+
+
+/* carousel */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto; 
+}
+
+
+.carousel {
+	margin-left: 136px;
+	position:relative;
+	margin-bottom: 130px;
+}
+
+.my-slide{
+	margin-right:40px;
+}
+
+.slick-prev, .slick-next{
+	position:absolute;
+	top:50%;
+	transform: translateY(-50%);
+	cursor: pointer;
+
+	&:hover{
+		opacity: 0.5;
+	}
+}
+
+.slick-prev{
+	left: -116px; 
+}
+.slick-next{
+	right:20px;
+}
+
+.wrapper-img {
+  position: relative;
+  // margin-right:40px;
+
+  &__overlay {
+  	position: absolute;
+  	top: 0;
+  	bottom: 0;
+  	left: 0;
+  	right: 0;
+  	height: 100%;
+  	width: 100%;
+  	opacity: 0;
+  	@include transition (.5s ease);
+  	background-color: rgba(27,241,173,0.8);
+  }
+
+  &:hover{
+  	.wrapper-img__overlay {
+  		opacity: 1;
+  	}
+  }
+}
+
+.content-overlay {
+	position: absolute;
+	bottom: 0;
+	left: 25px;
+	color: white;
+	font-size: 12px;
+  font-weight: 600;
+	line-height: 2;
+	text-align: left;
+	letter-spacing: 0.2em;
+
+	&__title{
+		font-size: 28px;
+		line-height: 1;
+	}
+
+	&__text{
+		margin-bottom: 35px;
+	}
+}
+
